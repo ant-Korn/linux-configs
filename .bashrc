@@ -39,6 +39,7 @@ man() {
 }
 
 alias cond="source /opt/anaconda/bin/activate root"
+alias dcond="source /opt/anaconda/bin/deactivate root"
 
 ranger() {
     if [ -z "$RANGER_LEVEL" ]; then

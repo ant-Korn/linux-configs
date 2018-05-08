@@ -1,5 +1,6 @@
-set shell=/bin/fish
+set shell=/bin/sh
 
+set encoding=utf-8
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
@@ -25,6 +26,13 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "map a specific key or shortcut to open NERDTree
 map <C-n> :NERDTreeToggle<CR>
 "end
+
+" NEW COMMANDS
+set printencoding=koi8-r
+command! Topdf hardcopy > %:t.ps | !ps2pdf %:t.ps && rm %:t.ps
+"
+
+command! -nargs=1 FromURL read !curl -s <q-args> 
 
 set backupdir=~/tmp
 set directory=~/tmp

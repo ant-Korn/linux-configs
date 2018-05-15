@@ -27,6 +27,8 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
+export EDITOR=vim
+
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
     LESS_TERMCAP_md=$'\E[01;38;5;74m' \
@@ -40,6 +42,8 @@ man() {
 
 alias cond="source /opt/anaconda/bin/activate root"
 alias dcond="source /opt/anaconda/bin/deactivate root"
+alias winmnt="sudo mount /dev/sdb2 /mnt/win"
+alias winunm="sudo umount /mnt/win"
 
 ranger() {
     if [ -z "$RANGER_LEVEL" ]; then

@@ -42,7 +42,7 @@ man() {
 
 alias cond="source /opt/anaconda/bin/activate root"
 alias dcond="source /opt/anaconda/bin/deactivate root"
-alias winmnt="sudo mount /dev/sdb2 /mnt/win"
+alias winmnt="sudo mount $(cat windows_part.txt) /mnt/win"
 alias winunm="sudo umount /mnt/win"
 
 ranger() {

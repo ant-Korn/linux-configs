@@ -42,8 +42,10 @@ man() {
 
 alias cond="source /opt/anaconda/bin/activate root"
 alias dcond="source /opt/anaconda/bin/deactivate root"
-alias winmnt="sudo mount $(cat windows_part.txt) /mnt/win"
+alias winmnt="sudo mount /mnt/win"
 alias winunm="sudo umount /mnt/win"
+alias flashmnt="sudo mount /mnt/flash"
+alias flashunm="sudo umount /mnt/flash"
 
 ranger() {
     if [ -z "$RANGER_LEVEL" ]; then

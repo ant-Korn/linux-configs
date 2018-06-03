@@ -34,6 +34,12 @@ command! Topdf hardcopy > %:t.ps | !ps2pdf %:t.ps && rm %:t.ps
 
 command! -nargs=1 FromURL read !curl -s <q-args> 
 
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
+set foldenable
+set foldmethod=syntax
+
 set backupdir=~/tmp
 set directory=~/tmp
 

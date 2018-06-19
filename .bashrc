@@ -40,12 +40,20 @@ man() {
     man "$@"
 }
 
+# System
+alias sdn="sudo shutdown now"
+alias progs="(pacman -Qet && pacman -Qm) | sort -u" # List programs I've installed
+alias nf="clear && neofetch"
+
+# Programms
 alias cond="source /opt/anaconda/bin/activate root"
 alias dcond="source /opt/anaconda/bin/deactivate root"
 alias winmnt="sudo mount /mnt/win"
 alias winunm="sudo umount /mnt/win"
 alias flashmnt="sudo mount /mnt/flash"
 alias flashunm="sudo umount /mnt/flash"
+alias v="vim"
+alias r="ranger"
 
 ranger() {
     if [ -z "$RANGER_LEVEL" ]; then

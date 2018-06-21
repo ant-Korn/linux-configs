@@ -52,7 +52,7 @@ alias nf="clear && neofetch"
 # Programms
 alias cond="source /opt/anaconda/bin/activate root"
 alias dcond="source /opt/anaconda/bin/deactivate root"
-alias ll="ls -l"
+alias ll="ls -lh"
 alias v="vim"
 alias r="ranger"
 

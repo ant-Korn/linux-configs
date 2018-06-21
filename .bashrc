@@ -41,19 +41,24 @@ man() {
 }
 
 # System
-alias sdn="sudo shutdown now"
+alias winmnt="sudo mount /mnt/in"
+alias winunm="sudo umount /mnt/win"
+alias flashmnt="sudo mount /mnt/flash"
+alias flashunm="sudo umount /mnt/flash"
+alias sdn="shutdown now"
 alias progs="(pacman -Qet && pacman -Qm) | sort -u" # List programs I've installed
 alias nf="clear && neofetch"
 
 # Programms
 alias cond="source /opt/anaconda/bin/activate root"
 alias dcond="source /opt/anaconda/bin/deactivate root"
-alias winmnt="sudo mount /mnt/win"
-alias winunm="sudo umount /mnt/win"
-alias flashmnt="sudo mount /mnt/flash"
-alias flashunm="sudo umount /mnt/flash"
+alias ll="ls -l"
 alias v="vim"
 alias r="ranger"
+
+# Moves
+alias p="cd ~/projects && ls -a"
+
 
 ranger() {
     if [ -z "$RANGER_LEVEL" ]; then

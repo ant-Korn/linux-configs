@@ -57,7 +57,7 @@ alias v="vim"
 alias r="ranger"
 
 # Moves
-alias p="cd ~/projects && ls -a"
+alias p="cd ~/projects && ll"
 
 
 ranger() {

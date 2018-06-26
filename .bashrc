@@ -41,7 +41,7 @@ man() {
 }
 
 # System
-alias winmnt="sudo mount /mnt/in"
+alias winmnt="sudo mount /mnt/win"
 alias winunm="sudo umount /mnt/win"
 alias flashmnt="sudo mount /mnt/flash"
 alias flashunm="sudo umount /mnt/flash"
@@ -58,6 +58,7 @@ alias r="ranger"
 
 # Moves
 alias p="cd ~/projects && ll"
+alias pt="cd ~/projects/tex_proj && ll"
 
 
 ranger() {

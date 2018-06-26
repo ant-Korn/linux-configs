@@ -12,12 +12,15 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'lervag/vimtex'
- 
+Plugin 'tmhedberg/SimpylFold'
+"Plugin 'vim-syntastic/syntastic'
+Plugin 'kien/ctrlp.vim'
+
 call vundle#end()
 
 filetype plugin indent on
+
 
 "NERDtree settings
 "NERDTree automatically when vim starts up if no files were specified
@@ -26,6 +29,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "map a specific key or shortcut to open NERDTree
 map <C-n> :NERDTreeToggle<CR>
 "end
+
 
 " NEW COMMANDS
 set printencoding=koi8-r
@@ -37,11 +41,22 @@ command! -nargs=1 FromURL read !curl -s <q-args>
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Enable folding with the spacebar
+nnoremap <space> zA
+
 set foldenable
 set foldmethod=syntax
 
 set backupdir=~/tmp
 set directory=~/tmp
+
+let NERDTreeShowHidden=1
 
 set incsearch
 set ignorecase smartcase

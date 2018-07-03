@@ -5,10 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if which tmux >/dev/null 2>&1; then
+#if which tmux >/dev/null 2>&1; then
 #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux attach || ./scripts/tmux_start.sh)
-fi
+#    test -z "$TMUX" && (tmux attach || ./scripts/tmux_start.sh)
+#fi
 
 alias ls='ls --color=auto'
 #PS1='[\u@\h \W]\$ '
@@ -48,6 +48,10 @@ alias flashunm="sudo umount /mnt/flash"
 alias sdn="shutdown now"
 alias progs="(pacman -Qet && pacman -Qm) | sort -u" # List programs I've installed
 alias nf="clear && neofetch"
+
+# Settings
+alias vs="vim ~/.vimrc"
+alias bs="vim ~/.bashrc"
 
 # Programms
 alias cond="source /opt/anaconda/bin/activate root"

@@ -16,20 +16,50 @@ Plugin 'lervag/vimtex'
 Plugin 'tmhedberg/SimpylFold'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'kien/ctrlp.vim'
+"Plugin 'vimwiki/vimwiki'
+"Plugin 'suan/vim-instant-markdown'
+Bundle 'Rykka/riv.vim'
+Plugin 'Rykka/InstantRst'
 
 call vundle#end()
 
+let proj1 = { 'path': '~/notes', }
+let g:riv_projects = [proj1]
+let g:riv_web_browser='chromium'
+
+"let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+"let g:instant_markdown_autostart = 0 " disable autostart
+"let g:instant_markdown_slow = 1
+"map <leader>md :InstantMarkdownPreview<CR>
+
 filetype plugin indent on
 
+" Enable system clipboard
+set clipboard=unnamedplus
 
 "NERDtree settings
 "NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "map a specific key or shortcut to open NERDTree
 map <C-n> :NERDTreeToggle<CR>
 "end
 
+"Fix undo in insert mode
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
+
+" show a visual current line
+set cursorline
+hi CursorLine cterm=NONE term=bold cterm=bold ctermbg=17
+"colors table: https://vignette.wikia.nocookie.net/vim/images/1/16/Xterm-color-table.png/revision/latest?cb=20110121055231
+"from: http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
+"Other good color for me
+"hi CursorLine cterm=NONE term=bold cterm=bold ctermbg=53
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
 
 " NEW COMMANDS
 set printencoding=koi8-r
@@ -39,7 +69,7 @@ command! Topdf hardcopy > %:t.ps | !ps2pdf %:t.ps && rm %:t.ps
 command! -nargs=1 FromURL read !curl -s <q-args> 
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
-nnoremap <silent> <C-l> :nohl<CR><C-l>
+nnoremap <silent> <C-@> :nohl<CR><C-l>
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
@@ -47,11 +77,17 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+"Delete without cut
+nnoremap <leader>d "_d
+
 " Enable folding with the spacebar
 nnoremap <space> zA
 
 set foldenable
 set foldmethod=syntax
+
+"make find to subdirs
+set path+=**
 
 set backupdir=~/tmp
 set directory=~/tmp
@@ -76,7 +112,7 @@ set statusline=%F%m%r%h%w\ [FF,FE,TE=%{&fileformat},%{&fileencoding},%{&encoding
 hi StatusLine gui=reverse cterm=reverse
 "Alvays show status bar
 set laststatus=2
-"set list " включить подсветку
+"set list " включить подсветку нечитаемых символов
 "set listchars=tab:>-,trail:- " установить символы, которыми будет осуществляться подсветка
 set nohlsearch
 "НАСТРОЙКИ ОТСТУПА
@@ -95,18 +131,7 @@ function! SuperCleverTab()
 endfunction
 
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2016 Jul 28
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
 
-" When started as "evim", evim.vim will already have done these settings.
 filetype plugin indent on
 
 if version >= 700

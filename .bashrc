@@ -52,6 +52,7 @@ alias nf="clear && neofetch"
 # Settings
 alias vs="vim ~/.vimrc"
 alias bs="vim ~/.bashrc"
+alias is="vim ~/.config/i3/config"
 
 # Programms
 alias cond="source /opt/anaconda/bin/activate root"

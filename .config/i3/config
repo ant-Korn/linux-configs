@@ -31,6 +31,9 @@ set $down k
 set $left j
 set $right semicolon
 
+
+for_window [class="^.*"] border pixel 3
+
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
 
@@ -186,6 +189,9 @@ bar {
 
 #gaps outer 10
 #gaps inner 5
+
+#Music player daemon:
+exec --no-startup-id mpd
 
 #Set background
 exec_always --no-startup-id feh --bg-fill ~/Downloads/wallpapers/screen.jpg

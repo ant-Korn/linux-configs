@@ -60,6 +60,7 @@ alias dcond="source /opt/anaconda/bin/deactivate root"
 alias ll="ls -lh"
 alias v="vim"
 alias r="ranger"
+alias msc="ncmpcpp"
 
 # Moves
 alias p="cd ~/projects && ll"

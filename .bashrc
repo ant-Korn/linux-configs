@@ -61,6 +61,15 @@ alias ll="ls -lh"
 alias v="vim"
 alias r="ranger"
 alias msc="ncmpcpp"
+alias stream="streamlink -p mpv"
+# stream recording to mp4 format
+function record() {
+    if [ -z "$1" ] || [ -z "$2" ]; then
+        echo "Usage: ${FUNCNAME[0]} [URL] [filename]";
+        return 1;
+    fi
+    streamlink --hls-segment-threads 3 -O $1 best | tee >(ffmpeg -i pipe:0 -c copy -bsf:a aac_adtstoasc -f mp4 -movflags empty_moov+separate_moof+frag_keyframe $2.mp4)  | mpv -
+}
 
 # Moves
 alias p="cd ~/projects && ll"

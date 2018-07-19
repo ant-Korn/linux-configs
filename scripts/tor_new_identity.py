@@ -9,7 +9,7 @@ def check_ip(ip, port, ip_checker):
 ip = "127.0.0.1"
 port_config = "9051"
 port_proxy = "9050"
-ip_checker = "http://checkip.amazonaws.com/"
+ip_checker = "https://checkip.amazonaws.com/"
 
 print("Old IP: ", end="", flush=True)
 check_ip(ip, port_proxy, ip_checker)

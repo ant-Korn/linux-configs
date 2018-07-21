@@ -20,8 +20,11 @@ Plugin 'kien/ctrlp.vim'
 "Plugin 'suan/vim-instant-markdown'
 Bundle 'Rykka/riv.vim'
 Plugin 'Rykka/InstantRst'
+Plugin 'lyokha/vim-xkbswitch'
 
 call vundle#end()
+
+let g:XkbSwitchEnabled = 1
 
 let proj1 = { 'path': '~/notes', }
 let g:riv_projects = [proj1]

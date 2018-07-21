@@ -70,10 +70,12 @@ function record() {
     fi
     streamlink --hls-segment-threads 3 -O $1 best | tee >(ffmpeg -i pipe:0 -c copy -bsf:a aac_adtstoasc -f mp4 -movflags empty_moov+separate_moof+frag_keyframe $2.mp4)  | mpv -
 }
+alias torref="~/scripts/tor_new_identity.py"
 
 # Moves
-alias p="cd ~/projects && ll"
-alias pt="cd ~/projects/tex_proj && ll"
+alias p="cd ~/projects && pwd && ll"
+alias pt="cd ~/projects/tex_proj && pwd && ll"
+alias cfg="cd ~/my_configs/linux-configs && pwd && ll -a"
 
 
 ranger() {

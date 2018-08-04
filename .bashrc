@@ -40,6 +40,7 @@ man() {
     man "$@"
 }
 
+
 # System
 alias winmnt="sudo mount /mnt/win"
 alias winunm="sudo umount /mnt/win"
@@ -61,7 +62,9 @@ alias ll="ls -lh"
 alias v="vim"
 alias r="ranger"
 alias msc="ncmpcpp"
-alias stream="streamlink -p mpv"
+alias stream="streamlink --hls-segment-threads 3 -p mpv"
+alias pclean="profile-cleaner"
+
 # stream recording to mp4 format
 function record() {
     if [ -z "$1" ] || [ -z "$2" ]; then
@@ -85,3 +88,4 @@ ranger() {
         exit
     fi
 }
+

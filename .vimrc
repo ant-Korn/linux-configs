@@ -239,3 +239,11 @@ if exists("+showtabline")
   set stal=1
   set tabline=%!MyTabLine()
 endif
+
+" Add format option 'w' to add trailing white space, indicating that paragraph
+" continues on next line. This is to be used with mutt's 'text_flowed' option.
+augroup mail_trailing_whitespace " {
+    autocmd!
+    autocmd FileType mail setlocal formatoptions+=w
+augroup END " }
+

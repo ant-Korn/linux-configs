@@ -62,7 +62,7 @@ alias ll="ls -lh"
 alias v="vim"
 alias r="ranger"
 alias msc="ncmpcpp"
-alias stream="streamlink --hls-segment-threads 3 -p mpv"
+alias stream="streamlink --hls-segment-threads 2 -p mpv"
 alias pclean="profile-cleaner"
 
 # stream recording to mp4 format

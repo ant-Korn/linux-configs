@@ -38,7 +38,7 @@ let g:riv_web_browser='chromium'
 filetype plugin indent on
 
 " Enable system clipboard
-set clipboard=unnamedplus
+set clipboard^=unnamed,unnamedplus
 
 "NERDtree settings
 "NERDTree automatically when vim starts up if no files were specified
@@ -246,4 +246,6 @@ augroup mail_trailing_whitespace " {
     autocmd!
     autocmd FileType mail setlocal formatoptions+=w
 augroup END " }
+
+command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
